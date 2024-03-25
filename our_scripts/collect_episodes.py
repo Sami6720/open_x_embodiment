@@ -36,7 +36,14 @@ def persist_episodes(episodes: list, instruction_connected_by_underscores: str, 
 
 
 def collect_episodes(target_episode_count: int):
-    instrut_list = []
+    instrut_list = [
+        "push the blue cube into the blue triangle",
+        "seperate the green blocks",
+        "push the blue triangle into the green circle",
+        "seperate the red blocks",
+        "move your arm to the bottom center of the board",
+        "seperate the red blocks from each other ",
+    ]
     epses_per_instruction = {}
     instruct_eps_count = {}
 
