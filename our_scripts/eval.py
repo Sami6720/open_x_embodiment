@@ -6,7 +6,7 @@ import argparse
 import matplotlib.pyplot as plt
 import tensorflow as tf
 from random import randint
-from real_robot import RealRobotics
+from yellow_hex_green_circle import YellowHexGreenCircle
 
 COLLECTED_EPISODES_SOURCE_DIR_PATH = '/home/dvenuto/af_dt/af_dt/language-table/data'
 FRAMES_DESTINATION_DIR_PATH = '/home/dvenuto/af_dt/af_dt/language-table/language_table/frames'
@@ -43,7 +43,7 @@ def create_and_save_fig(rbg_array, instruction, file_ending):
 
 
 def run_loop(episodes):
-    checker = RealRobotics()
+    checker = YellowHexGreenCircle()
     random_file_ending = randint(1, 123123123123)
     with open(os.path.join(RESULTS_DIR, f"result_{random_file_ending}.txt"), 'w') as f:
         print_statement = f"Random file ending is: {random_file_ending}\n"
