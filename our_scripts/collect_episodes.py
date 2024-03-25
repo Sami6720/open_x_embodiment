@@ -47,10 +47,9 @@ def collect_episodes(target_episode_count: int):
     epses_per_instruction = {}
     instruct_eps_count = {}
 
-    for eps in epses_per_instruction:
-        epses_per_instruction[eps] = []
-    for eps in instrut_list:
-        instruct_eps_count[eps] = 0
+    for instruc in instrut_list:
+        epses_per_instruction[instruc] = []
+        instruct_eps_count[instruc] = 0
 
     try:
 
@@ -64,8 +63,8 @@ def collect_episodes(target_episode_count: int):
             if instruction.strip() in instrut_list:
                 epses_per_instruction[instruction].append(episode)
                 instruct_eps_count[instruction] += 1
-            print(
-                f"Current episode count with target: {instruction}: {len(epses_per_instruction[instruction])}")
+                print(
+                    f"Current episode count with target: {instruction} is {len(epses_per_instruction[instruction])}")
             episode_count += 1
         print(f"Total number of steps is: {total_number_of_steps}")
 
