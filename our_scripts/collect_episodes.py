@@ -36,18 +36,21 @@ def persist_episodes(episodes: list, instruction_connected_by_underscores: str, 
 
 
 def collect_episodes(target_episode_count: int):
+    instrut_list = []
     epses_per_instruction = {}
+    instruct_eps_count = {}
+
     for eps in epses_per_instruction:
         epses_per_instruction[eps] = []
-    instrut_list = []
-    instruct_eps_count = {}
     for eps in instrut_list:
         instruct_eps_count[eps] = 0
 
     try:
+
         episode_count = 0
         total_number_of_steps = 0
         print("Go 1")
+
         for episode in get_episode_ds(dataset_paths['language_table']):
             first_step = next(iter(episode['steps'].as_numpy_iterator()))
             instruction = decode_inst(first_step['observation']['instruction'])
@@ -64,6 +67,7 @@ def collect_episodes(target_episode_count: int):
                 return
             episode_count += 1
         print(f"Total number of steps is: {total_number_of_steps}")
+
     except Exception as e:
         #     if len(episodes) != 0:
         #          persist_episodes(episodes, os.path.join('_'.join(target_instruction.split(' '))), str(target_episode_count))
@@ -72,13 +76,12 @@ def collect_episodes(target_episode_count: int):
 #  print(f"The episode count fell short by: {target_episode_count - len(episodes)}")
 #  print(f"The total number of episodes in the episode_ds is {episode_count}")
 
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--target_episode_count', default=4,
-                        help="Number of episodes wanted.")
+                        help = "Number of episodes wanted.")
     parser.add_argument('--target_instruction',
-                        default='push the red star to the bottom right of the board')
+                        default = 'push the red star to the bottom right of the board')
     args = parser.parse_args()
     collect_episodes(args.target_episode_count)
 
