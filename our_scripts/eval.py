@@ -74,7 +74,7 @@ if __name__ == '__main__':
     parser.add_argument('--target_episode_count', default=4,
                         help="Number of episodes wanted.")
     parser.add_argument('--target_instruction',
-                        default='push the red star to the bottom right of the board')
+                        default='place the yellow heart right to the green circle')
     args = parser.parse_args()
     episodes = get_episodes(args.target_episode_count, args.target_instruction)
     run_loop(episodes)
