@@ -59,12 +59,6 @@ def collect_episodes(target_episode_count: int):
                 instruct_eps_count[instruction] += 1
             print(
                 f"Current episode count with target: {instruction}: {len(epses_per_instruction[instruction])}")
-            if instruct_eps_count[instruction] == target_episode_count:
-                print(
-                    f"{target_episode_count} episodes have been reached for {instruction}")
-                persist_episodes(epses_per_instruction[instruction], os.path.join(
-                    '_'.join(instruction.split(' '))), target_episode_count)
-                return
             episode_count += 1
         print(f"Total number of steps is: {total_number_of_steps}")
 
@@ -75,13 +69,19 @@ def collect_episodes(target_episode_count: int):
         print("No more records left to process. Need to download more.")
 #  print(f"The episode count fell short by: {target_episode_count - len(episodes)}")
 #  print(f"The total number of episodes in the episode_ds is {episode_count}")
+    for instruct in epses_per_instruction:
+        print(
+            f"The total number episodes for instruction {instruct} is {len(epses_per_instruction[instruct])}")
+        persist_episodes(epses_per_instruction[instruct], os.path.join(
+            '_'.join(instruct.split(' '))), target_episode_count)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--target_episode_count', default=4,
-                        help = "Number of episodes wanted.")
+                        help="Number of episodes wanted.")
     parser.add_argument('--target_instruction',
-                        default = 'push the red star to the bottom right of the board')
+                        default='push the red star to the bottom right of the board')
     args = parser.parse_args()
     collect_episodes(args.target_episode_count)
 
