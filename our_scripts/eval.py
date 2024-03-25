@@ -63,7 +63,7 @@ def run_loop(episodes, instruction):
                 frame_img_path = create_and_save_fig(
                     observation['rgb'], observation['instruction'], random_file_ending)
                 # TODO: Add GPT_CHECKER
-                reward_from_checker = checker.reward(frame_img_path)
+                reward_from_checker = checker.checker(frame_img_path)
                 print_statement = f"Reward by checker {reward_from_checker}\n"
                 print(print_statement)
                 f.write(print_statement)
