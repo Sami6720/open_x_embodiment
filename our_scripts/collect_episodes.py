@@ -37,35 +37,35 @@ def persist_episodes(episodes: list, instruction_connected_by_underscores: str, 
 
 def collect_episodes(target_episode_count: int):
     instrut_list = [
-        "separate the yellow blocks"
-        "separate the green blocks"
-        "separate the yellow blocks from each other"
-        "push the green circle into the group of blocks"
-        "separate the green blocks from each other"
-        "separate the green circle from the group of blocks"
-        "move the green circle to the center of the board"
-        "slightly touch the green circle"
-        "push the green circle towards the center of the board"
-        "move the green circle towards the center of the board"
-        "move your arm to the right of the green circle"
-        "move the green circle to the bottom center of the board"
-        "push the green circle to the center of the board"
-        "move the green circle to the top center of the board"
-        "move the arm to the bottom of the green circle"
-        "place the arm below the green circle"
-        "move your arm towards the green circle"
-        "move your arm to the left of the green circle"
-        "move your arm below the green circle"
-        "move your arm away from the green circle"
-        "move the arm away from the green circle"
-        "separate the green blocks from the group of blocks"
-        "push the green circle towards the top center of the board"
-        "place the green circle at the center of the board"
-        "move the arm to the left of the green circle"
-        "touch the green circle"
-        "move the green circle to the center"
-        "separate yellow blocks from each other"
-        "push the green circle to the top center of the board"
+        "separate the yellow blocks",
+        "separate the green blocks",
+        "separate the yellow blocks from each other",
+        "push the green circle into the group of blocks",
+        "separate the green blocks from each other",
+        "separate the green circle from the group of blocks",
+        "move the green circle to the center of the board",
+        "slightly touch the green circle",
+        "push the green circle towards the center of the board",
+        "move the green circle towards the center of the board",
+        "move your arm to the right of the green circle",
+        "move the green circle to the bottom center of the board",
+        "push the green circle to the center of the board",
+        "move the green circle to the top center of the board",
+        "move the arm to the bottom of the green circle",
+        "place the arm below the green circle",
+        "move your arm towards the green circle",
+        "move your arm to the left of the green circle",
+        "move your arm below the green circle",
+        "move your arm away from the green circle",
+        "move the arm away from the green circle",
+        "separate the green blocks from the group of blocks",
+        "push the green circle towards the top center of the board",
+        "place the green circle at the center of the board",
+        "move the arm to the left of the green circle",
+        "touch the green circle",
+        "move the green circle to the center",
+        "separate yellow blocks from each other",
+        "push the green circle to the top center of the board",
         "move the green circle to the top left of the board"
     ]
     epses_per_instruction = {}
