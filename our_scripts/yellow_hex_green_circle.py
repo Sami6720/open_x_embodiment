@@ -16,9 +16,11 @@ class YellowHexGreenHeart():
         self.first = True
 
     # Function to identify the yellow heart
-    def find_yellow_heart(self, image):
+    def find_yellow_heart(self, image_path):
         
         # Convert the image to HSV color space
+
+        image = cv2.imread(image_path)
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
         
         # Define range for yellow color and create mask
@@ -49,7 +51,9 @@ class YellowHexGreenHeart():
         
         return False, None
 
-    def find_green_circle(self, image):
+    def find_green_circle(self, image_path):
+
+        image = cv2.imread(image_path)
         
         # Convert the image to HSV color space
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
