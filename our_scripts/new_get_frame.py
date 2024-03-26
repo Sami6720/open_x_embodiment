@@ -1,10 +1,8 @@
 import numpy as np
 import tensorflow_datasets as tfds
-import pickle
 import os
 import argparse
 import tensorflow as tf
-from PIL import Image
 import random
 import matplotlib.pyplot as plt
 
