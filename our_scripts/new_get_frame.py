@@ -83,7 +83,6 @@ def get_start_and_end_frames(target_start_and_end_frames_count):
     for instruc in instruc_set:
         frame_extracted[instruc] = 0
     try:
-        episode_count = 0
         total_number_of_steps = 0
         total_starts_and_ends = 0
         print("Go 1")
@@ -98,8 +97,6 @@ def get_start_and_end_frames(target_start_and_end_frames_count):
             if instruction.strip() in instruc_set and frame_extracted[instruction.strip()] <= 3:
 
                 episodes.append(episode)
-                start_done = False
-                end_done = False
                 random_file_ending = random.randint(0, 2000000)
 
                 for step in episode['steps'].as_numpy_iterator():
@@ -109,11 +106,9 @@ def get_start_and_end_frames(target_start_and_end_frames_count):
                     if step['is_first']:
                         create_and_save_fig(rgb_array, instruction, str(
                             random_file_ending) + "start")
-                        start_done = True
                     if step['is_last']:
                         create_and_save_fig(rgb_array, instruction, str(
                             random_file_ending) + "end")
-                        end_done = True
                         print(f"{instruction.strip()}\n")
                         frame_extracted[instruction.strip()] += 1
                         break
