@@ -6,7 +6,7 @@ import argparse
 import tensorflow as tf
 from random import randint
 
-DATA_PATH = '/home/dvenuto/af_dt/af_dt/language-table/data'
+DATA_PATH = '/home/dvenuto/scratch/lang_table_eps_data'
 
 random_number = randint(0, 1000)
 

@@ -6,7 +6,7 @@ import tensorflow as tf
 from random import randint
 from yellow_hex_green_circle import YellowHexGreenHeart
 
-COLLECTED_EPISODES_SOURCE_DIR_PATH = '/home/dvenuto/af_dt/af_dt/language-table/data'
+COLLECTED_EPISODES_SOURCE_DIR_PATH = '/home/dvenuto/scratch/lang_table_eps_data'
 FRAMES_DESTINATION_DIR_PATH = '/home/dvenuto/af_dt/af_dt/language-table/language_table/frames'
 RESULTS_DIR = '/home/dvenuto/af_dt/af_dt/language-table/language_table/results'
 
