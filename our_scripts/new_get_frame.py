@@ -43,7 +43,7 @@ def create_and_save_fig(rbg_array, instruction, file_ending):
 # actually do have the same language goal.
 
 
-def get_start_and_end_frames(target_start_and_end_frames_count, target_instruction):
+def get_start_and_end_frames(target_start_and_end_frames_count):
     episodes = []
     file = open("all_instructions.txt", 'w')
     instruc_set = [
@@ -139,8 +139,7 @@ if __name__ == '__main__':
     parser.add_argument('--target_instruction',
                         default='seperate the blue blocks')
     args = parser.parse_args()
-    get_start_and_end_frames(args.target_episode_count,
-                             args.target_instruction)
+    get_start_and_end_frames(args.target_episode_count)
 
     # `break`point()
     # set_of_instructions = set()
