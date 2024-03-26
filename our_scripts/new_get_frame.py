@@ -79,6 +79,7 @@ def get_start_and_end_frames(target_start_and_end_frames_count):
         "move the green circle to the top left of the board"
     ]
     frame_extracted = {}
+    episode_count = 0
     for instruc in instruc_set:
         frame_extracted[instruc] = 0
     try:
