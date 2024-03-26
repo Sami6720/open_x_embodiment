@@ -1,6 +1,4 @@
 import numpy as np
-import tensorflow_datasets as tfds
-import pickle
 import os
 import argparse
 import matplotlib.pyplot as plt
